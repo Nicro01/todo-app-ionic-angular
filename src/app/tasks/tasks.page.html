@@ -1,7 +1,14 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="py-4">
+    <ion-title class="text-4xl font-bold text-center">TODO App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
 <div
-  class="flex flex-col justify-between h-full bg-white py-10 text-neutral-700"
+  class="flex flex-col justify-between h-full bg-white pt-6 pb-[20vh] text-neutral-700"
 >
-  <h1 class="text-4xl font-bold text-center mb-6">Lista de Tarefas</h1>
+  <h1 class="text-2xl font-bold text-center mb-6">Lista de Tarefas</h1>
 
   <div class="p-4 h-full flex flex-col gap-4 overflow-x-auto">
     <div
@@ -22,7 +29,8 @@
       >
         <ion-item
           [class.bg-green-100]="item.isDone"
-          class="w-full bg-neutral-100 rounded-lg p-4"
+          [class.bg-neutral-100]="!item.isDone"
+          class="w-full rounded-lg p-4"
         >
           <ion-label class="text-[#1f1235] bg-transparent"
             >{{ item.title }}</ion-label
