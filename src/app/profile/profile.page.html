@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="profileForm" (ngSubmit)="onUpdateProfile()">
+    <ion-item>
+      <ion-label position="floating">Username</ion-label>
+      <ion-input formControlName="username" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Current Password</ion-label>
+      <ion-input formControlName="currentPassword" type="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">New Password</ion-label>
+      <ion-input formControlName="newPassword" type="password"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" type="submit">Update Profile</ion-button>
+  </form>
+</ion-content>

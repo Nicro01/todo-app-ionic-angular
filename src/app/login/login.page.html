@@ -1,0 +1,81 @@
+<ion-content class="ion-padding relative bg-white">
+  <div
+    class="relative z-10 h-full flex flex-col items-center justify-center gap-4 text-[#1f1235]"
+  >
+    <h2 class="text-4xl font-bold">Bem-vindo de volta!</h2>
+    <h1 class="text-lg">Entre com sua conta</h1>
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="onLogin()"
+      class="w-[90vw] flex flex-col gap-4"
+    >
+      <!-- <ion-item>
+
+        <ion-label position="floating">Username</ion-label>
+        <ion-input formControlName="email" type="text"></ion-input>
+      </ion-item> -->
+
+      <div class="relative w-full min-w-[200px] h-10">
+        <input
+          type="email"
+          formControlName="email"
+          name="email"
+          class="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-transparent focus:border-t-transparent text-sm px-3 py-2.5 rounded-[7px] border-blue-gray-200 focus:border-gray-900"
+          placeholder=" "
+        /><label
+          for="email"
+          class="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-gray-500 peer-focus:text-gray-900 before:border-blue-gray-200 peer-focus:before:!border-gray-900 after:border-blue-gray-200 peer-focus:after:!border-gray-900"
+          >Email
+        </label>
+      </div>
+
+      <!-- <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input formControlName="password" type="password"></ion-input>
+      </ion-item> -->
+
+      <div class="relative w-full min-w-[200px] h-10">
+        <input
+          type="password"
+          formControlName="password"
+          name="password"
+          class="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-transparent focus:border-t-transparent text-sm px-3 py-2.5 rounded-[7px] border-blue-gray-200 focus:border-gray-900"
+          placeholder=" "
+        /><label
+          for="password"
+          class="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-gray-500 peer-focus:text-gray-900 before:border-blue-gray-200 peer-focus:before:!border-gray-900 after:border-blue-gray-200 peer-focus:after:!border-gray-900"
+          >Senha
+        </label>
+      </div>
+
+      <ion-button expand="block" type="submit">Entrar</ion-button>
+      <ion-button expand="block" color="light" (click)="navigateToRegister()"
+        >Crie uma conta</ion-button
+      >
+    </form>
+  </div>
+
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1440 320"
+    class="absolute top-0 left-0 h-[30vh] z-0"
+  >
+    <path
+      fill="#ff6e6c"
+      fill-opacity="1"
+      d="M0,96L7.1,122.7C14.1,149,28,203,42,218.7C56.5,235,71,213,85,192C98.8,171,113,149,127,122.7C141.2,96,155,64,169,48C183.5,32,198,32,212,37.3C225.9,43,240,53,254,58.7C268.2,64,282,64,296,74.7C310.6,85,325,107,339,101.3C352.9,96,367,64,381,96C395.3,128,409,224,424,240C437.6,256,452,192,466,176C480,160,494,192,508,197.3C522.4,203,536,181,551,144C564.7,107,579,53,593,26.7C607.1,0,621,0,635,5.3C649.4,11,664,21,678,74.7C691.8,128,706,224,720,240C734.1,256,748,192,762,192C776.5,192,791,256,805,272C818.8,288,833,256,847,234.7C861.2,213,875,203,889,208C903.5,213,918,235,932,224C945.9,213,960,171,974,165.3C988.2,160,1002,192,1016,186.7C1030.6,181,1045,139,1059,101.3C1072.9,64,1087,32,1101,26.7C1115.3,21,1129,43,1144,90.7C1157.6,139,1172,213,1186,234.7C1200,256,1214,224,1228,224C1242.4,224,1256,256,1271,256C1284.7,256,1299,224,1313,197.3C1327.1,171,1341,149,1355,144C1369.4,139,1384,149,1398,138.7C1411.8,128,1426,96,1433,80L1440,64L1440,0L1432.9,0C1425.9,0,1412,0,1398,0C1383.5,0,1369,0,1355,0C1341.2,0,1327,0,1313,0C1298.8,0,1285,0,1271,0C1256.5,0,1242,0,1228,0C1214.1,0,1200,0,1186,0C1171.8,0,1158,0,1144,0C1129.4,0,1115,0,1101,0C1087.1,0,1073,0,1059,0C1044.7,0,1031,0,1016,0C1002.4,0,988,0,974,0C960,0,946,0,932,0C917.6,0,904,0,889,0C875.3,0,861,0,847,0C832.9,0,819,0,805,0C790.6,0,776,0,762,0C748.2,0,734,0,720,0C705.9,0,692,0,678,0C663.5,0,649,0,635,0C621.2,0,607,0,593,0C578.8,0,565,0,551,0C536.5,0,522,0,508,0C494.1,0,480,0,466,0C451.8,0,438,0,424,0C409.4,0,395,0,381,0C367.1,0,353,0,339,0C324.7,0,311,0,296,0C282.4,0,268,0,254,0C240,0,226,0,212,0C197.6,0,184,0,169,0C155.3,0,141,0,127,0C112.9,0,99,0,85,0C70.6,0,56,0,42,0C28.2,0,14,0,7,0L0,0Z"
+    ></path>
+  </svg>
+
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1440 320"
+    class="absolute bottom-0 left-0 h-[30vh] z-0"
+  >
+    <path
+      fill="#ff6e6c"
+      fill-opacity="1"
+      d="M0,64L9.6,69.3C19.2,75,38,85,58,96C76.8,107,96,117,115,144C134.4,171,154,213,173,213.3C192,213,211,171,230,170.7C249.6,171,269,213,288,208C307.2,203,326,149,346,149.3C364.8,149,384,203,403,208C422.4,213,442,171,461,176C480,181,499,235,518,218.7C537.6,203,557,117,576,96C595.2,75,614,117,634,154.7C652.8,192,672,224,691,218.7C710.4,213,730,171,749,128C768,85,787,43,806,53.3C825.6,64,845,128,864,160C883.2,192,902,192,922,208C940.8,224,960,256,979,261.3C998.4,267,1018,245,1037,240C1056,235,1075,245,1094,256C1113.6,267,1133,277,1152,240C1171.2,203,1190,117,1210,80C1228.8,43,1248,53,1267,101.3C1286.4,149,1306,235,1325,266.7C1344,299,1363,277,1382,266.7C1401.6,256,1421,256,1430,256L1440,256L1440,320L1430.4,320C1420.8,320,1402,320,1382,320C1363.2,320,1344,320,1325,320C1305.6,320,1286,320,1267,320C1248,320,1229,320,1210,320C1190.4,320,1171,320,1152,320C1132.8,320,1114,320,1094,320C1075.2,320,1056,320,1037,320C1017.6,320,998,320,979,320C960,320,941,320,922,320C902.4,320,883,320,864,320C844.8,320,826,320,806,320C787.2,320,768,320,749,320C729.6,320,710,320,691,320C672,320,653,320,634,320C614.4,320,595,320,576,320C556.8,320,538,320,518,320C499.2,320,480,320,461,320C441.6,320,422,320,403,320C384,320,365,320,346,320C326.4,320,307,320,288,320C268.8,320,250,320,230,320C211.2,320,192,320,173,320C153.6,320,134,320,115,320C96,320,77,320,58,320C38.4,320,19,320,10,320L0,320Z"
+    ></path>
+  </svg>
+</ion-content>

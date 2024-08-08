@@ -1,0 +1,74 @@
+.bottom-menu {
+  max-width: 450px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: transparent;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+
+ion-tab-bar {
+  height: 8vh;
+}
+
+.bottom-menu ion-tab-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding: 5px;
+  color: #949494;
+  font-weight: 600;
+  font-size: 12px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.bottom-menu ion-tab-button:nth-child(2) {
+  border-top-right-radius: 15px;
+}
+
+.bottom-menu ion-tab-button:nth-child(5) {
+  border-top-left-radius: 15px;
+}
+
+.bottom-menu ion-tab-button i {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.bottom-menu ion-tab-button.sat {
+  overflow: visible;
+  background-color: #ff3f56;
+  color: #fff;
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 1/2;
+  margin-bottom: 4px;
+}
+
+.bottom-menu ion-tab-button.sat:hover {
+  color: #fff;
+}
+
+.bottom-menu ion-tab-button.active,
+.bottom-menu ion-tab-button:hover {
+  color: #ff3f56;
+}
+
+.bottom-menu ion-tab-button:last-child {
+  margin-right: 0;
+}
+
+span.bosluk {
+  flex: 1;
+}
