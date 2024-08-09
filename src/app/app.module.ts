@@ -18,8 +18,10 @@ import { environment } from '../environments/environment';
 
 import { AddTaskComponent } from './add-task/add-task.component';
 
+import { MonthComponent } from './month/month.component';
+
 @NgModule({
-  declarations: [AppComponent, AddTaskComponent],
+  declarations: [AppComponent, AddTaskComponent, MonthComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),

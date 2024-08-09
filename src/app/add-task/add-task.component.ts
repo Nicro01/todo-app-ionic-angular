@@ -9,6 +9,7 @@ interface Task {
   title: string;
   description: string;
   datetime: string;
+  isDone: boolean;
 }
 
 @Component({
@@ -20,6 +21,7 @@ export class AddTaskComponent {
   taskTitle: string = '';
   taskDescription: string = '';
   taskDatetime: Date = new Date();
+  taskIsDone: boolean = false;
 
   tasks: Task[] = [];
 
@@ -34,6 +36,10 @@ export class AddTaskComponent {
 
   onDateTimeChange(event: CustomEvent) {
     this.taskDatetime = new Date(event.detail.value);
+  }
+
+  onIsDoneChange(event: CustomEvent) {
+    this.taskIsDone = event.detail.checked;
   }
 
   saveTask() {
@@ -51,6 +57,7 @@ export class AddTaskComponent {
         title: this.taskTitle,
         description: this.taskDescription,
         datetime: formattedDatetime,
+        isDone: this.taskIsDone,
       };
 
       this.taskService.addTask(newTask).then(() => {

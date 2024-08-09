@@ -20,13 +20,61 @@
         class="flex flex-col my-2"
         *ngFor="let item of task.tasks"
       >
-        <ion-item class="w-full bg-neutral-100 rounded-lg p-4">
+        <ion-item
+          [class.bg-green-100]="item.isDone"
+          class="w-full bg-neutral-100 rounded-lg p-4"
+        >
           <ion-label class="text-[#1f1235] bg-transparent"
             >{{ item.title }}</ion-label
           >
         </ion-item>
 
-        <ion-item-options>
+        <ion-item-options side="start" *ngIf="!item.isDone">
+          <ion-item-option
+            (click)="archiveTask(item)"
+            class="w-16 border-s-lg"
+            color="success"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              />
+            </svg>
+          </ion-item-option>
+        </ion-item-options>
+
+        <ion-item-options side="start" *ngIf="item.isDone">
+          <ion-item-option
+            (click)="archiveTask(item)"
+            class="w-16 border-s-lg"
+            color="light"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3"
+              />
+            </svg>
+          </ion-item-option>
+        </ion-item-options>
+
+        <ion-item-options side="end">
           <ion-item-option (click)="editTask(item)" class="w-16" color="warning"
             ><svg
               xmlns="http://www.w3.org/2000/svg"

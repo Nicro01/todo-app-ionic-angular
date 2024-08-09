@@ -48,10 +48,18 @@
         </label>
       </div>
 
-      <ion-button expand="block" type="submit">Entrar</ion-button>
-      <ion-button expand="block" color="light" (click)="navigateToRegister()"
-        >Crie uma conta</ion-button
+      <button
+        class="group w-full flex h-min ring-none items-center justify-center rounded-lg py-2 px-4 font-dm !ring-transparent text-[#ff6e6c] border border-[#ff6e6c] border-b-[#f18583] border-b-4"
+        type="submit"
       >
+        Entrar
+      </button>
+      <button
+        class="w-full py-2 bg-[#ff6e6c] text-white flex items-center justify-center rounded-lg"
+        (click)="navigateToRegister()"
+      >
+        Crie uma conta
+      </button>
     </form>
   </div>
 

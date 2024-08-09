@@ -7,6 +7,7 @@ interface Task {
   title: string;
   description: string;
   datetime: string;
+  isDone: boolean;
 }
 
 @Component({
@@ -164,6 +165,12 @@ export class TasksPage implements OnInit {
       .catch((error) => {
         console.error('Failed to delete task', error);
       });
+  }
+
+  async archiveTask(task: Task) {
+    this.taskService.archiveTask(task.id).then(() => {
+      this.loadTasks();
+    });
   }
 
   async editTask(task: Task) {

@@ -1,17 +1,9 @@
-// :host {
-//   width: 90% !important;
-//   height: 90% !important;
-//   margin: 0 auto !important;
-//   border-top-left-radius: 15px !important;
-//   border-top-right-radius: 15px !important;
-//   bottom: -10% !important;
-//   top: unset !important;
-//   box-shadow: 0 0 5px #888888 !important;
-//   background: transparent !important;
-//   --background: transparent !important;
-// }
+ion-checkbox {
+  --size: 32px;
+  --checkbox-background-checked: #ff6e6c;
+}
 
-// :root {
-//   --ion-background-color: transparent !important;
-//   --background: transparent !important;
-// }
+ion-checkbox::part(container) {
+  border-radius: 6px;
+  border: 2px solid #ff6e6c;
+}

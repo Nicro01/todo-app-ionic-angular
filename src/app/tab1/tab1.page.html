@@ -1,15 +1,34 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title> Tab 1 </ion-title>
+  <ion-toolbar class="py-4">
+    <ion-title class="text-4xl font-bold text-center">TODO App</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="px-4 pb-20">
+    <div class="grid grid-cols-2 gap-4 mt-4">
+      <div
+        *ngFor="let month of months"
+        (click)="openMonthTasksModal(month[0])"
+        [ngStyle]="{
+    'background-image': 'linear-gradient(to bottom, ' + month[1] + '44' + ' 5%, ' + month[1] + ' 100%)'
+  }"
+        class="col-span-1 relative rounded-lg shadow-md"
+      >
+        <img
+          src="https://i.postimg.cc/bJ217LJ6/design-de-layout-de-linhas-de-grade-de-perspectiva-curva-abstrata-removebg-preview.png"
+          alt=""
+          class="opacity-10 w-full brightness-150 object-cover"
+          width="1216"
+          height="640"
+        />
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+        <span
+          class="absolute top-1/2 left-1/2 text-neutral-500 font-bold text-xl -translate-x-1/2 -translate-y-1/2"
+        >
+          {{month[0]}}
+        </span>
+      </div>
+    </div>
+  </div>
 </ion-content>
