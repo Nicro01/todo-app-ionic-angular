@@ -19,8 +19,8 @@
           *ngFor="let item of tasks"
         >
           <ion-item
-          [class.bg-green-100]="item.isDone"
-          [class.bg-neutral-100]="!item.isDone"
+            [class.bg-green-100]="item.isDone"
+            [class.bg-neutral-100]="!item.isDone"
             class="w-full rounded-lg p-2"
           >
             <ion-label class="text-[#1f1235] bg-transparent">{{
@@ -31,7 +31,7 @@
           <ion-item-options side="start" *ngIf="!item.isDone">
             <ion-item-option
               (click)="archiveTask(item)"
-              class="w-16 border-s-lg"
+              class="w-16 rounded-s-lg"
               color="success"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"

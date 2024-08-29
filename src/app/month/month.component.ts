@@ -12,9 +12,9 @@ interface Task {
 }
 
 @Component({
-  selector: 'app-month', // Seletor para usar este componente no template de outro componente
-  templateUrl: './month.component.html', // Caminho para o arquivo de template HTML
-  styleUrls: ['./month.component.scss'], // Caminho para os arquivos de estilo (opcional)
+  selector: 'app-month',
+  templateUrl: './month.component.html',
+  styleUrls: ['./month.component.scss'],
 })
 export class MonthComponent implements OnInit {
   @Input() month!: string;
@@ -49,7 +49,7 @@ export class MonthComponent implements OnInit {
     this.taskService
       .deleteTask(id)
       .then(() => {
-        this.loadTasks(); // Recarrega as tarefas
+        this.loadTasks();
       })
       .catch((error) => {
         console.error('Failed to delete task', error);

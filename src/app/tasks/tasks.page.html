@@ -4,7 +4,6 @@
   </ion-toolbar>
 </ion-header>
 
-
 <div
   class="flex flex-col justify-between h-full bg-white pt-6 pb-[20vh] text-neutral-700"
 >
@@ -40,7 +39,7 @@
         <ion-item-options side="start" *ngIf="!item.isDone">
           <ion-item-option
             (click)="archiveTask(item)"
-            class="w-16 border-s-lg"
+            class="w-16 rounded-s-lg"
             color="success"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +61,7 @@
         <ion-item-options side="start" *ngIf="item.isDone">
           <ion-item-option
             (click)="archiveTask(item)"
-            class="w-16 border-s-lg"
+            class="w-16 rounded-s-lg"
             color="light"
           >
             <svg
@@ -122,13 +121,4 @@
       </ion-item-sliding>
     </div>
   </div>
-
-  <ion-alert
-    trigger="add-task"
-    class="custom-alert"
-    header="Nova Tarefa"
-    message="Digite o título da nova tarefa"
-    [inputs]="alertInputs"
-    [buttons]="alertButtons"
-  ></ion-alert>
 </div>

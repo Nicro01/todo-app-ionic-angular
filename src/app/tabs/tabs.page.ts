@@ -13,7 +13,6 @@ export class TabsPage {
   activeTab: string = '';
 
   constructor(private router: Router, private modalCtrl: ModalController) {
-    // Listen to route changes to update the active tab
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.setActiveTab(event.urlAfterRedirects);

@@ -67,6 +67,10 @@ button.alert-button.alert-button-confirm {
 //   background: transparent !important;
 // }
 
+ion-content {
+  --padding-bottom: env(safe-area-inset-bottom);
+}
+
 /**
  * Ionic Dark Mode
  * -----------------------------------------------------

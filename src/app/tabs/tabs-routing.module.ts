@@ -12,19 +12,19 @@ const routes: Routes = [
         path: 'tab1',
         loadChildren: () =>
           import('../tab1/tab1.module').then((m) => m.Tab1PageModule),
-        canActivate: [AuthGuard], // Protegendo a rota 'tab1'
+        canActivate: [AuthGuard],
       },
       {
         path: 'tab2',
         loadChildren: () =>
           import('../tasks/tasks.module').then((m) => m.TasksPageModule),
-        canActivate: [AuthGuard], // Protegendo a rota 'tab2'
+        canActivate: [AuthGuard],
       },
       {
         path: 'tab3',
         loadChildren: () =>
           import('../profile/profile.module').then((m) => m.ProfilePageModule),
-        canActivate: [AuthGuard], // Protegendo a rota 'tab3'
+        canActivate: [AuthGuard],
       },
       {
         path: '',

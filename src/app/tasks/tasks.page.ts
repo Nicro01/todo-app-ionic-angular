@@ -25,44 +25,6 @@ export class TasksPage implements OnInit {
     private alertController: AlertController
   ) {}
 
-  public alertButtons = [
-    {
-      text: 'Cancel',
-      role: 'cancel',
-      cssClass: 'alert-button-cancel',
-    },
-    {
-      text: 'Add',
-      cssClass: 'alert-button-confirm',
-      handler: (data: Task) => {
-        this.taskService
-          .addTask(data)
-          .then(() => {
-            this.loadTasks();
-            this.emptyAlertInputs();
-          })
-          .catch((error) => {
-            console.error('Failed to add task', error);
-          });
-      },
-    },
-  ];
-
-  public alertInputs = [
-    {
-      name: 'title',
-      type: 'text',
-      placeholder: 'Task title',
-      value: '',
-    },
-    {
-      name: 'description',
-      type: 'textarea',
-      placeholder: 'Task description',
-      value: '',
-    },
-  ];
-
   ngOnInit() {
     this.loadTasks();
   }
@@ -99,62 +61,6 @@ export class TasksPage implements OnInit {
         return dateB.getTime() - dateA.getTime();
       });
   }
-
-  emptyAlertInputs() {
-    this.alertInputs = [
-      {
-        name: 'title',
-        type: 'text',
-        placeholder: 'Task title',
-        value: '',
-      },
-      {
-        name: 'description',
-        type: 'textarea',
-        placeholder: 'Task description',
-        value: '',
-      },
-    ];
-  }
-
-  // async addTask() {
-  //   const alert = await this.alertController.create({
-  //     header: 'New Task',
-  //     inputs: [
-  //       {
-  //         name: 'title',
-  //         type: 'text',
-  //         placeholder: 'Task title',
-  //       },
-  //       {
-  //         name: 'description',
-  //         type: 'textarea',
-  //         placeholder: 'Task description',
-  //       },
-  //     ],
-  //     buttons: [
-  //       {
-  //         text: 'Cancel',
-  //         role: 'cancel',
-  //       },
-  //       {
-  //         text: 'Add',
-  //         handler: (data) => {
-  //           this.taskService
-  //             .addTask(data)
-  //             .then(() => {
-  //               this.loadTasks(); // Recarrega as tarefas
-  //             })
-  //             .catch((error) => {
-  //               console.error('Failed to add task', error);
-  //             });
-  //         },
-  //       },
-  //     ],
-  //   });
-
-  //   await alert.present();
-  // }
 
   deleteTask(id: string) {
     this.taskService
